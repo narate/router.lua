@@ -1,0 +1,7 @@
+.DS_Store
+nginxample/logs/*
+nginxample/client_body_temp
+nginxample/proxy_temp
+nginxample/scgi_temp
+nginxample/uwsgi_temp
+nginxample/fastcgi_temp
