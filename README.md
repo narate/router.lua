@@ -31,14 +31,27 @@ Example of use
 Example of use with OpenResty
 =============================
 - nginx.conf
+		
 		...
-		location / {
-			content_by_lua_file	path/to/file.lua;
-		}
+			location / {
+				content_by_lua_file	path/to/file.lua;
+			}
 		...
 	
+
 	> copy or link lib/router.lua to nginx working directory
+	
+		.
+		├── conf
+		├── logs
+		├── lua
+		├── reload
+		├── router.lua -> ../lib/router.lua
+		├── start
+		└── stop
+
 - file.lua
+
 		local router = require "router"
 		local uri = string.lower(ngx.var.uri) -- string
 
@@ -78,7 +91,7 @@ Example of use with OpenResty
 		router.get("/hello/:name", function(params) hello(params) end)
 		router.get("/body", function() read_body() end)
 
-		router.execute("get", uri)  -- router by uri
+		router.execute("get", uri)  -- route by uri
 
 License
 =======
