@@ -31,11 +31,11 @@ Example of use
 Example of use with OpenResty
 =============================
 - nginx.conf
-	...
+		...
 		location / {
 			content_by_lua_file	path/to/file.lua;
 		}
-	...
+		...
 	
 	> copy or link lib/router.lua to nginx working directory
 - file.lua
